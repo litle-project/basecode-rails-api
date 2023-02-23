@@ -1,0 +1,23 @@
+version: "3.7"
+
+networks:
+  local:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    container_name: api-rails-postgres
+    ports:
+      - 5432:3111
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+      - ./.env:/docker-entrypoint-initdb.d/.env
+      - ./db/init-user.sh:/docker-entrypoint-initdb.d/init-user.sh
+    networks:
+      - local
