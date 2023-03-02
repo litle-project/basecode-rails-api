@@ -1,0 +1,5 @@
+1. run migration -> `rails db:migrate`
+2. run rollback migration -> `rails db:rollback`
+3. run seeder -> `rails db:seed`
+4. create migration -> `rails generate migration {filename}`
+5. create seeder -> `create new file only`

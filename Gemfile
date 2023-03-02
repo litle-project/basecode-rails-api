@@ -12,6 +12,7 @@ gem "redis", "~> 4.0"
 gem "figaro"
 gem 'bcrypt'
 gem 'pg'
+gem 'will_paginate'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
