@@ -12,8 +12,12 @@ class Api::V1::Users::CreateController < ApplicationController
         name: params[:name],
         email: params[:email],
         phone_number: params[:phone],
-        password: BCrypt::Password.create(params[:password])
+        password: params[:password]
       )
+
+      if created.valid?
+        created.update(password: BCrypt::Password.create(params[:password]))
+      end
 
       if !created.valid?
         render json: { code: 422, message: created.errors.full_messages.first, data: nil }, status: :unprocessable_entity

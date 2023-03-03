@@ -11,7 +11,7 @@ class Api::V1::Users::DetailController < ApplicationController
   private
   def processing
     detail = User
-      .select(User.column_names - ['password', 'created_at', 'updated_at'])
+      .select(User.column_names - ['password', 'created_at', 'updated_at', 'deleted_at'])
       .where(id: params[:id])
       .first
 

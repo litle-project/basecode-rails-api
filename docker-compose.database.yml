@@ -21,3 +21,10 @@ services:
       - ./db/init-user.sh:/docker-entrypoint-initdb.d/init-user.sh
     networks:
       - local
+  redis:
+    image: redis:alpine
+    container_name: api-rails-redis
+    ports:
+      - "6379"
+    networks:
+      - local

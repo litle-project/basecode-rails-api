@@ -9,7 +9,7 @@ class Api::V1::Users::UpdateController < ApplicationController
       update = nil
       message = "No data found with id: #{params[:id]}"
       user = User
-        .select(User.column_names - ['password', 'created_at'])
+        .select(User.column_names - ['password', 'created_at', 'deleted_at'])
         .where(id: params[:id])
         .first
       

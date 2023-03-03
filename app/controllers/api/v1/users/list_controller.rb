@@ -12,7 +12,7 @@ class Api::V1::Users::ListController < ApplicationController
   def processing
     begin
       users = User
-        .select(User.column_names - ['password', 'created_at', 'updated_at'])
+        .select(User.column_names - ['password', 'created_at', 'updated_at', 'deleted_at'])
         .all
       
       if params[:keyword].present?

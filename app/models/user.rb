@@ -29,6 +29,7 @@ class User < ApplicationRecord
   
   validates :phone_number,
     presence: true,
+    uniqueness: true,
     allow_blank: false,
     length: { maximum: 14 }
 

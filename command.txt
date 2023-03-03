@@ -3,3 +3,4 @@
 3. run seeder -> `rails db:seed`
 4. create migration -> `rails generate migration {filename}`
 5. create seeder -> `create new file only`
+6. add package -> add gem package to gemfile and run `bundle install`
