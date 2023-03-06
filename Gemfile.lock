@@ -86,6 +86,7 @@ GEM
     io-console (0.6.0)
     irb (1.6.2)
       reline (>= 0.3.0)
+    jwt (2.7.0)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -150,8 +151,6 @@ GEM
     redis (4.8.1)
     reline (0.3.2)
       io-console (~> 0.5)
-    sqlite3 (1.6.1)
-      mini_portile2 (~> 2.8.0)
     thor (1.2.1)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -170,11 +169,11 @@ DEPENDENCIES
   bootsnap
   debug
   figaro
+  jwt
   pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   redis (~> 4.0)
-  sqlite3 (~> 1.4)
   tzinfo-data
   will_paginate
 

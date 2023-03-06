@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :authentication do
         post '/register', to: 'register#index'
+        post '/login', to: 'login#index'
       end
 
       namespace :users do
