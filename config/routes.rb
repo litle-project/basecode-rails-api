@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       namespace :authentication do
         post '/register', to: 'register#index'
         post '/login', to: 'login#index'
+        get '/logout', to: 'logout#index'
       end
 
       namespace :users do
