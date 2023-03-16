@@ -1,7 +1,11 @@
+
+require "#{Rails.root}/app/helpers/redis_helper"
+require "#{Rails.root}/app/services/jwt_service"
+require "#{Rails.root}/app/middlewares/authorization_middleware"
+
 class Api::V1::Authentication::LogoutController < ApplicationController
-  require "#{Rails.root}/app/helpers/redis_helper"
-  require "#{Rails.root}/app/services/jwt_service"
-  
+  middleware.use AuthorizationMiddleware
+
   def index
     return processing()
   end

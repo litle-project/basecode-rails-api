@@ -5,7 +5,6 @@ class AuthorizationMiddleware
 
   def call(env)
     token = env['HTTP_AUTHORIZATION']&.split&.last
-    
     if token.nil? || JwtService.expired?(token)
       return response()
     end
