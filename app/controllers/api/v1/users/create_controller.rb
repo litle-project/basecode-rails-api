@@ -1,5 +1,8 @@
+require 'bcrypt'
+require "#{Rails.root}/app/middlewares/authorization_middleware"
+
 class Api::V1::Users::CreateController < ApplicationController
-  require 'bcrypt'
+  middleware.use AuthorizationMiddleware
 
   def index
     return processing()

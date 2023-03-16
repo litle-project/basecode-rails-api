@@ -1,4 +1,8 @@
+require "#{Rails.root}/app/middlewares/authorization_middleware"
+
 class Api::V1::Users::DetailController < ApplicationController
+  middleware.use AuthorizationMiddleware
+
   def index
     begin
       data = processing()

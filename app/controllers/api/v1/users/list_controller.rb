@@ -1,4 +1,8 @@
+require "#{Rails.root}/app/middlewares/authorization_middleware"
+
 class Api::V1::Users::ListController < ApplicationController
+  middleware.use AuthorizationMiddleware
+  
   def index
     begin
       response = processing
