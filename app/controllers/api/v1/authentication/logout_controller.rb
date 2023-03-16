@@ -17,10 +17,7 @@ class Api::V1::Authentication::LogoutController < ApplicationController
   def processing
     begin
       user = getUser(request.env)
-      
-      if user
-        redis_delete("token-#{user.id}")
-      end
+      redis_delete("token-#{user.id}")
 
       render json: { code: 200, message: 'OK', data: nil }
     rescue => exception
