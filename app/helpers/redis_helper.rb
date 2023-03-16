@@ -23,4 +23,15 @@ module RedisHelper
     # Get the value from Redis
     redis.get(key)
   end
+
+  def redis_delete(key, db = 0)
+    # Connect to Redis
+    redis = Redis.current
+
+    # Switch to the specified Redis database
+    redis.select(db)
+
+    # Delete the value from Redis
+    redis.del(key)
+  end
 end

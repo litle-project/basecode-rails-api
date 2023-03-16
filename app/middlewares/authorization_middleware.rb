@@ -25,7 +25,8 @@ class AuthorizationMiddleware
       end
       
       token_redis = redis_get("token-#{user['id']}")
-      if !token_redis
+
+      if !token_redis || token_redis != token
         return false
       end
 
